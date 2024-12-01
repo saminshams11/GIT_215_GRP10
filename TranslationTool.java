@@ -81,23 +81,27 @@ public class TranslationTool {
 
         // Language selection menu
         System.out.println("Welcome! Please choose a language for translation!");
-        System.out.println("1. English to Spanish");
-        System.out.println("2. English to French");
-        System.out.print("Enter your choice (1 or 2): ");
+        System.out.println("1. English to Bangla");
+        System.out.println("2. English to Spanish");
+        System.out.println("3. English to French");
+        System.out.print("Enter your choice (1, 2 or 3): ");
         int choice = scanner.nextInt();
         scanner.nextLine();
 
         String translationsFile;
         switch (choice) {
             case 1:
-                translationsFile = "translations_es.properties";
+                translationsFile = "translations_bn.properties";
                 break;
             case 2:
+                translationsFile = "translations_es.properties";
+                break;
+            case 3:
                 translationsFile = "translations_fr.properties";
                 break;
             default:
-                System.out.println("Invalid choice. Defaulting to English to Spanish.");
-                translationsFile = "translations_es.properties";
+                System.out.println("Invalid choice. Defaulting to English to Bangla.");
+                translationsFile = "translations_bn.properties";
         }
 
         TranslationTool tool = new TranslationTool(translationsFile);
